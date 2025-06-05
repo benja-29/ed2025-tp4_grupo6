@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iostream>
 #include <vector>
 #include <string>
 #include <stdlib.h>
@@ -190,7 +191,7 @@ int main() {
 		int id;
 		
 		switch(opcion) {
-		case 1:
+		case 1: {
 			cout << "¿Es un libro digital? (s/n): ";
 			char tipo;
 			cin >> tipo;
@@ -206,8 +207,9 @@ int main() {
 			}
 			cout << "Libro registrado correctamente.\n";
 			break;
+		}
 			
-		case 2:
+		case 2: {
 			string nombreUsuario;
 			cout << "Nombre del usuario: "; getline(cin, nombreUsuario);
 			cout << "ID del usuario: "; cin >> id;
@@ -215,6 +217,7 @@ int main() {
 			bib.registrarUsuario(new Usuario(nombreUsuario, id));
 			cout << "Usuario registrado correctamente.\n";
 			break;
+		}
 			
 		case 3:
 			cout << "Título del libro: "; getline(cin, titulo);
@@ -225,14 +228,13 @@ int main() {
 			}
 			break;
 			
-		case 4:
+		case 4: {
 			cout << "Autor: "; getline(cin, autor);
-			{
-				auto lista = bib.buscarLibrosPorAutor(autor);
-				if (lista.empty()) cout << "No se encontraron libros de ese autor.\n";
-				else for (auto l : lista) l->mostrar();
-			}
+			auto lista = bib.buscarLibrosPorAutor(autor);
+			if (lista.empty()) cout << "No se encontraron libros de ese autor.\n";
+			else for (auto l : lista) l->mostrar();
 			break;
+		}
 			
 		case 5:
 			cout << "Título del libro: "; getline(cin, titulo);
