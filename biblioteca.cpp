@@ -213,7 +213,7 @@ int main() {
 	int opcion;
 	
 	do {
-		cout << "\n==== MENÚ DE BIBLIOTECA ====\n";
+		//cout << "\n==== MENÚ DE BIBLIOTECA ====\n";
 		cout << "1. Registrar nuevo libro\n";
 		cout << "2. Registrar nuevo usuario\n";
 		cout << "3. Buscar libro por título\n";
